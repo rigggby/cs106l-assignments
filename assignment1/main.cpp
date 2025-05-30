@@ -92,10 +92,9 @@ void write_courses_offered(std::vector<Course> &all_courses)
     }
     file.close();
     // Remove offered courses from all_courses
-    all_courses.erase(std::remove_if(all_courses.begin(), all_courses.end(),
-                                     [](const Course &course)
-                                     { return course.quarter == "null"; }),
-                      all_courses.end());
+    std::erase_if(all_courses, [](const Course& course) {
+        return course.quarter != "null";
+    });
 }
 
 /**
