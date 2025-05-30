@@ -99,7 +99,7 @@ def get_decls(getter: Callable[[], T], kind_plural: str, scope: str = "class") -
 def setup():
     sandbox_cpp_path = os.path.join(PATH, "sandbox.cpp")
     class_h_path = os.path.join(PATH, "class.h")
-    class_cpp_path = os.path.join(PATH, "class.cpp")
+    # class_cpp_path = os.path.join(PATH, "class.cpp")
 
     if not os.path.isfile(sandbox_cpp_path):
         raise RuntimeError(
@@ -134,7 +134,7 @@ def setup():
     )
 
     global definitions
-    definitions = get_definitions(class_cpp_path)
+    # definitions = get_definitions(class_cpp_path)
 
 
 def test_parameterized_constructor():
